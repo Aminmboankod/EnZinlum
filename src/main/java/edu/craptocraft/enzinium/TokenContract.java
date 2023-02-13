@@ -73,6 +73,10 @@ public class TokenContract {
 
     public void assertNotNull(TokenContract ricknillos) {
     }
+
+    public Object numOwners() {
+        return balances.size();
+    }
     
 
 }

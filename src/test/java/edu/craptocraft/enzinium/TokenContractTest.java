@@ -1,6 +1,7 @@
 package edu.craptocraft.enzinium;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotNull;
 
 import org.junit.Before;
@@ -34,5 +35,11 @@ public class TokenContractTest {
 
         ricknillos.addOwner(morty.getPK(), 200d);
         assertEquals(2, ricknillos.balances.size());
+    }
+
+    @Test
+    public void numOwnersTest() {
+        assertEquals(1, ricknillos.numOwners());
+        assertNotEquals(3, ricknillos.numOwners());
     }
 }
