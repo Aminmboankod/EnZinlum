@@ -1,5 +1,9 @@
 package edu.craptocraft.enzinium;
 
+import java.security.PublicKey;
+import java.util.HashMap;
+import java.util.Map;
+
 public class TokenContract {
 
     public String name;
@@ -7,6 +11,7 @@ public class TokenContract {
     public Integer totalSupply;
     public Double tokenPrice;
     private Address owner;
+    public Map balances = new HashMap<Address, Double>();
 
     public TokenContract(Address address) {
         this.owner = new Address();
@@ -20,7 +25,7 @@ public class TokenContract {
         return this.symbol;
     }
 
-    public int getTotalSupply() {
+    public int totalSupply() {
         return this.totalSupply;
     }
 
@@ -50,8 +55,37 @@ public class TokenContract {
 
     @Override
     public String toString(){
-        return String.format("Name: %s \n Symbol: %s \n TotalSupply: %s \n Price: %s", 
-                                getName(), getSymbol(), getTotalSupply(), getPrice());
+        return String.format("Name: %s \n Symbol: %s \n TotalSupply: %s \n Price: %s", getName(), getSymbol(), totalSupply(), getPrice());
+    }
+
+    public void addOwner(PublicKey publicKey, double balance) {
+        balances.putIfAbsent(publicKey, balance);
+    }
+
+
+	public double getOwnerBalance(PublicKey pk) {
+		return 0;
+	}
+
+	public Object getBalances() {
+		return null;
+	}
+
+    public void assertNotNull(TokenContract ricknillos) {
     }
     
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+

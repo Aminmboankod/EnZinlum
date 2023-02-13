@@ -15,7 +15,7 @@ public class Address {
         
     }
 
-    public PublicKey getPublicKey() {
+    public PublicKey getPK() {
         return this.publicKey;
     }
 
@@ -35,6 +35,11 @@ public class Address {
         KeyPair pair =  GenSig.generateKeyPair();
         this.publicKey = pair.getPublic();
         this.privateKey = pair.getPrivate();
+    }
+
+
+    public void setBalance(Double balance) {
+        this.balance = balance;
     }
 
     @Override
