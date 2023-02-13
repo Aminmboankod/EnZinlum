@@ -47,18 +47,18 @@ public class App {
     //      * y balance
     //      */
         
-    //     Address morty = new Address();
-    //     morty.generateKeyPair();
+        Address morty = new Address();
+        morty.generateKeyPair();
 
-    //     Address jen = new Address();
-    //     jen.generateKeyPair();
+        Address jen = new Address();
+        jen.generateKeyPair();
 
-    //     System.out.println("\n" + "Address de Morty" + "\n" + 
-    //                               "==============="        );
-    //     System.out.println(morty.toString());  
-    //     System.out.println("\n" + "Address de Jen" + "\n" + 
-    //                               "==============="        );
-    //     System.out.println(jen.toString());         
+        System.out.println("\n" + "Address de Morty" + "\n" + 
+                                  "==============="        );
+        System.out.println(morty.toString());  
+        System.out.println("\n" + "Address de Jen" + "\n" + 
+                                  "==============="        );
+        System.out.println(jen.toString());         
 
     //     /**
     //      * Crea una contrato inteligente de tipo TokenContract 

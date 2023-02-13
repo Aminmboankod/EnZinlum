@@ -39,7 +39,7 @@ public class Address {
 
     @Override
     public String toString() {
-        return "Address: "+ this.publicKey.hashCode() + "balance: "+this.balance + this.symbol;
+        return "Address: "+ this.publicKey.hashCode() + " balance: "+this.balance + this.symbol;
     }
     
 }
