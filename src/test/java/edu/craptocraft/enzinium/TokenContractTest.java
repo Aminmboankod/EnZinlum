@@ -30,7 +30,7 @@ public class TokenContractTest {
     @Test
     public void addOwner_test() {
 
-        ricknillos.addOwner(rick.getPK(), 0d);
+        ricknillos.addOwner(rick.getPK(), 500d);
         assertEquals(1, ricknillos.balances.size());
 
         ricknillos.addOwner(morty.getPK(), 200d);
@@ -41,5 +41,10 @@ public class TokenContractTest {
     public void numOwnersTest() {
         assertEquals(1, ricknillos.numOwners());
         assertNotEquals(3, ricknillos.numOwners());
+    }
+
+    @Test
+    public void balanceOfTest() {
+        assertEquals(500d, ricknillos.balanceOf(rick.getPK()));
     }
 }

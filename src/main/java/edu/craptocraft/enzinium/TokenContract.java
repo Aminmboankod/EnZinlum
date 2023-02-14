@@ -77,6 +77,10 @@ public class TokenContract {
     public Object numOwners() {
         return balances.size();
     }
+
+    public Object balanceOf(PublicKey publicKey) {
+        return balances.get(publicKey);
+    }
     
 
 }
