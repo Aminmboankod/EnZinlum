@@ -132,20 +132,20 @@ public class App {
     //      * Dada una direccion, devuelve su balance de tokens. Si no existe 
     //      * el propietario, devuelve cero.
     //      */
-        // System.out.println("\n" + "Consulta de balances" + "\n" + 
-        //                           "===================="        );
+        System.out.println("\n" + "Consulta de balances" + "\n" + 
+                                  "===================="        );
 
-        // System.out.println("\n" + "Numero de propietarios: " + ricknillos.numOwners());
+        System.out.println("\n" + "Numero de propietarios: " + ricknillos.numOwners());
 
-        // System.out.println("Entradas de Rick: " 
-        //                         + ricknillos.balanceOf(rick.getPK()) 
-        //                         + " "
-        //                         + ricknillos.symbol());
+        System.out.println("Entradas de Rick: " 
+                                + ricknillos.balanceOf(rick.getPK()) 
+                                + " "
+                                + ricknillos.symbol());
 
-        // System.out.println("Entradas de Morty: " 
-        //                         + ricknillos.balanceOf(morty.getPK())
-        //                         + " "
-        //                         + ricknillos.symbol());
+        System.out.println("Entradas de Morty: " 
+                                + ricknillos.balanceOf(morty.getPK())
+                                + " "
+                                + ricknillos.symbol());
 
     //     /**
     //      * Morty quiere comprarle 2 entradas a Rick
@@ -166,36 +166,36 @@ public class App {
     //      * Lanza una EXCEPCION si no se cumple la condicion
     //      */
 
-    //     System.out.println("\n" + "Transferencia de entradas" + "\n" + 
-    //                               "========================="        );
+        System.out.println("\n" + "Transferencia de entradas" + "\n" + 
+                                  "========================="        );
 
-    //     ricknillos.transfer(morty.getPK(), 2d);
+        ricknillos.transfer(morty.getPK(), 2d);
 
-    //     System.out.println("Entradas de Rick: " 
-    //                             + ricknillos.balanceOf(rick.getPK()) 
-    //                             + " "
-    //                             + ricknillos.symbol());
+        System.out.println("Entradas de Rick: " 
+                                + ricknillos.balanceOf(rick.getPK()) 
+                                + " "
+                                + ricknillos.symbol());
 
-    //     System.out.println("Entradas de Morty: " 
-    //                             + ricknillos.balanceOf(morty.getPK())
-    //                             + " "
-    //                             + ricknillos.symbol());
+        System.out.println("Entradas de Morty: " 
+                                + ricknillos.balanceOf(morty.getPK())
+                                + " "
+                                + ricknillos.symbol());
 
-    //     // verifica que require falla si no hay tokens suficientes en el balance de Rick
-    //     ricknillos.transfer(morty.getPK(), 300d);
+        // verifica que require falla si no hay tokens suficientes en el balance de Rick
+        ricknillos.transfer(morty.getPK(), 300d);
 
-    //     System.out.println("Rick no tiene 300 entradas => entradas de Morty: " 
-    //                             + ricknillos.balanceOf(morty.getPK())
-    //                             + " "
-    //                             + ricknillos.symbol());
+        System.out.println("Rick no tiene 300 entradas => entradas de Morty: " 
+                                + ricknillos.balanceOf(morty.getPK())
+                                + " "
+                                + ricknillos.symbol());
         
-    //     // Morty vuelve a comprar un par de entradas mas
-    //     ricknillos.transfer(morty.getPK(), 2d);
+        // Morty vuelve a comprar un par de entradas mas
+        ricknillos.transfer(morty.getPK(), 2d);
 
-    //     System.out.println("2 entradas mas para Morty: " 
-    //                             + ricknillos.balanceOf(morty.getPK())
-    //                             + " "
-    //                             + ricknillos.symbol());
+        System.out.println("2 entradas mas para Morty: " 
+                                + ricknillos.balanceOf(morty.getPK())
+                                + " "
+                                + ricknillos.symbol());
 
     //     /**
     //      * A veces, hay reventa ;)

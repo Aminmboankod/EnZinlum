@@ -4,25 +4,24 @@ import java.security.PublicKey;
 import java.util.HashMap;
 import java.util.Map;
 
+
 public class TokenContract {
 
     public String name;
     public String symbol;
     public Integer totalSupply;
     public Double tokenPrice;
-    private Address owner;
-    public Map balances = new HashMap<Address, Double>();
+    public Address owner;
+    private final Map<PublicKey, Double> balances = new HashMap();
+    private PublicKey ownerPK;
 
-    public TokenContract(Address address) {
-        this.owner = new Address();
+    public TokenContract(Address owner) {
+        this.owner = owner;
+        this.ownerPK = owner.getPK();
     }
 
     public String getName() {
         return this.name;
-    }
-
-    public String getSymbol() {
-        return this.symbol;
     }
 
     public int totalSupply() {
@@ -33,8 +32,16 @@ public class TokenContract {
         return this.tokenPrice;
     }
 
+    public Map<PublicKey, Double> getBalances() {
+        return this.balances;
+    }
+
     public Address getOwner() {
         return this.owner;
+    }
+
+    public String symbol() {
+        return this.symbol;
     }
 
     public void setName(String name) {
@@ -55,31 +62,40 @@ public class TokenContract {
 
     @Override
     public String toString(){
-        return String.format("Name: %s \n Symbol: %s \n TotalSupply: %s \n Price: %s", getName(), getSymbol(), totalSupply(), getPrice());
+        return String.format("Name: %s \n Symbol: %s \n TotalSupply: %s \n Price: %s", getName(), symbol(), totalSupply(), getPrice());
     }
 
     public void addOwner(PublicKey publicKey, double balance) {
-        balances.putIfAbsent(publicKey, balance);
+        getBalances().putIfAbsent(publicKey, balance);
     }
 
-
-	public double getOwnerBalance(PublicKey pk) {
-		return 0;
-	}
-
-	public Object getBalances() {
-		return null;
-	}
-
-    public void assertNotNull(TokenContract ricknillos) {
-    }
 
     public Object numOwners() {
         return balances.size();
     }
 
-    public Object balanceOf(PublicKey publicKey) {
-        return balances.get(publicKey);
+    public double balanceOf(PublicKey publicKey) {
+
+        return this.getBalances().containsKey(publicKey) ? this.getBalances().get(publicKey): 0d;
+    }
+
+
+    public void transfer(PublicKey destinKey, double units) {
+        try {
+            require(balanceOf(this.ownerPK) >= units);
+            this.getBalances().replace(this.ownerPK, this.getBalances().get(this.ownerPK) - units);
+            this.getBalances().put( destinKey, balanceOf(destinKey) + units );
+
+        } catch (Exception a) {
+            //falla silenciosamente
+        }
+    }
+
+    public void require(boolean holds) throws Exception {
+        if (!holds) {
+            throw new Exception();
+        } 
+
     }
     
 

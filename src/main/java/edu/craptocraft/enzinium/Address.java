@@ -19,8 +19,11 @@ public class Address {
         return this.publicKey;
     }
 
-    public PrivateKey gPrivateKey() {
+    public PrivateKey getPrivateKey() {
         return this.privateKey;
+    }
+    public Double getBalance() {
+        return this.balance;
     }
 
     public void setPublicKey(PublicKey key) {
