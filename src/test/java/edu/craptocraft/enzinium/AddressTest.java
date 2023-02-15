@@ -56,7 +56,7 @@ public class AddressTest {
     }
     @Test
     public void testTransferEZI() {
-        
+        morty.transferEZI(20d);
         assertEquals(20d, morty.getBalance(), 0);
     }
 
