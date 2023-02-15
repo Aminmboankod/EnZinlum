@@ -269,11 +269,11 @@ public class App {
     //      * la dirección del receptor.
     //      */
 
-    //     morty.transferEZI(20d);
+        morty.transferEZI(20d);
 
-    //     System.out.println("\n" + "Recarga eZis de Morty" + "\n" + 
-    //                               "====================="        );
-    //     System.out.println(morty.toString());
+        System.out.println("\n" + "Recarga eZis de Morty" + "\n" + 
+                                  "====================="        );
+        System.out.println(morty.toString());
 
     //     /** 
     //      * Morty Compra 2 entradas a 5 enZiniums cada una:

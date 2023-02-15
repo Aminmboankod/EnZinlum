@@ -49,5 +49,9 @@ public class Address {
     public String toString() {
         return "Address: "+ this.publicKey.hashCode() + " balance: "+this.balance + this.symbol;
     }
+
+	public void transferEZI(double ezis) {
+        setBalance(ezis);
+	}
     
 }
