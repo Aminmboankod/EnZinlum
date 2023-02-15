@@ -2,10 +2,7 @@ package edu.craptocraft.enzinium;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotEquals;
-import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertThrows;
-
-import java.security.PublicKey;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -26,6 +23,9 @@ public class TokenContractTest {
 
         morty = new Address();
         morty.generateKeyPair();
+
+        tom = new Address();
+        tom.generateKeyPair();
 
         contract = new TokenContract(rick);
         contract.setName("Ricknillos");
@@ -61,12 +61,12 @@ public class TokenContractTest {
     @Test
     public void transferTest(){
         contract.transfer(morty.getPK(), 10);
-        assertEquals(490d, contract.balanceOf(rick.getPK()), 0);    
+        assertEquals(490d, contract.balanceOf(rick.getPK()), 0); 
+        
+        contract.transfer(morty.getPK(), tom.getPK(), 1d);
+        assertEquals(9d, contract.balanceOf(morty.getPK()), 0);
     }
 
-    // @Test
-    // public void requireTest() {
-    //     ricknillos.require(rick.balance>1);
-    //     assertThrows(true, ricknillos.require(rick.balance<1));
-    // }
+
+
 }

@@ -91,12 +91,24 @@ public class TokenContract {
         }
     }
 
+    public void transfer(PublicKey senderKey, PublicKey destinKey, double units) {
+        try {
+            require(balanceOf(senderKey) >= units);
+            this.getBalances().replace(senderKey, this.getBalances().get(senderKey) - units);
+            this.getBalances().put( destinKey, balanceOf(destinKey) + units);
+        } catch (Exception a) {
+            //falla silenciosamente
+        }
+	}
+
     public void require(boolean holds) throws Exception {
         if (!holds) {
             throw new Exception();
         } 
 
     }
+
+
     
 
 }

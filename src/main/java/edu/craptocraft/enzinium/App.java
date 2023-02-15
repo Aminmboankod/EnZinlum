@@ -211,19 +211,19 @@ public class App {
     //      * @param cantidad de tokens
     //      */
 
-    //     System.out.println("\n" + "Reventa de entradas" + "\n" + 
-    //                               "==================="        );
+        System.out.println("\n" + "Reventa de entradas" + "\n" + 
+                                  "==================="        );
         
-    //     ricknillos.transfer(morty.getPK(), jen.getPK(), 1d);
+        ricknillos.transfer(morty.getPK(), jen.getPK(), 1d);
 
-    //     System.out.println("Entradas de Morty: " 
-    //                             + ricknillos.balanceOf(morty.getPK())
-    //                             + " "
-    //                             + ricknillos.symbol());
-    //     System.out.println("Entradas de Jen: " 
-    //                             + ricknillos.balanceOf(jen.getPK())
-    //                             + " "
-    //                             + ricknillos.symbol());
+        System.out.println("Entradas de Morty: " 
+                                + ricknillos.balanceOf(morty.getPK())
+                                + " "
+                                + ricknillos.symbol());
+        System.out.println("Entradas de Jen: " 
+                                + ricknillos.balanceOf(jen.getPK())
+                                + " "
+                                + ricknillos.symbol());
 
     //     /**
     //      * Llega el dia del concierto y Rick quiere
