@@ -309,20 +309,20 @@ public class App {
     //      * de esos enZiniums
     //      */
 
-    //     morty.send(ricknillos, 10d);
+        morty.send(ricknillos, 10d);
 
-    //     ricknillos.owners();
-    //     System.out.println("Owner: " + rick.getPK().hashCode() + " " 
-    //                                  + ricknillos.balanceOf(rick.getPK())
-    //                                  + " "
-    //                                  + ricknillos.symbol());
+        ricknillos.owners();
+        System.out.println("Owner: " + rick.getPK().hashCode() + " " 
+                                     + ricknillos.balanceOf(rick.getPK())
+                                     + " "
+                                     + ricknillos.symbol());
 
-    //     System.out.println("\n" + "Address de Rick" + "\n" + 
-    //                               "==============="        );
-    //     System.out.println(rick.toString());
-    //     System.out.println("\n" + "Address de Morty" + "\n" + 
-    //                               "==============="        );
-    //     System.out.println(morty.toString());
+        System.out.println("\n" + "Address de Rick" + "\n" + 
+                                  "==============="        );
+        System.out.println(rick.toString());
+        System.out.println("\n" + "Address de Morty" + "\n" + 
+                                  "==============="        );
+        System.out.println(morty.toString());
 
     //     // verifica que Morty no tiene dinero para comprar una entrada
     //     morty.send(ricknillos, 3d);

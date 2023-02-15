@@ -42,7 +42,7 @@ public class Address {
 
 
     public void setBalance(Double balance) {
-        this.balance = balance;
+        this.balance += balance;
     }
 
     @Override
@@ -50,8 +50,15 @@ public class Address {
         return "Address: "+ this.publicKey.hashCode() + " balance: "+this.balance + this.symbol;
     }
 
-	public void transferEZI(double ezis) {
-        setBalance(ezis);
+	public void transferEZI(double enziniums) {
+        setBalance(enziniums);
 	}
+
+    public void send(TokenContract contract, double enziniums) {
+        if (this.getBalance()>= enziniums) {
+            contract.payable(publicKey, enziniums);
+            this.balance -= enziniums;
+        }
+    }
     
 }

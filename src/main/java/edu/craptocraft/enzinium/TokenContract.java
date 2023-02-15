@@ -122,6 +122,14 @@ public class TokenContract {
                                     .sum();
 	}
 
+    public void payable(PublicKey publicKey, double enziniums) {
+        double tokens = enziniums / getPrice();
+        if (tokens > 1) {
+            transfer(publicKey, tokens);
+            owner.transferEZI(enziniums);
+        }
+    }
+
 
     
 
