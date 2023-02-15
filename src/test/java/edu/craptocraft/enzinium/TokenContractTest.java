@@ -16,7 +16,7 @@ public class TokenContractTest {
 
 
     @Before
-    public void constructorTest() {
+    public void testConstructor() {
 
         rick = new Address();
         rick.generateKeyPair();
@@ -37,7 +37,7 @@ public class TokenContractTest {
     }
 
     @Test
-    public void addOwner_test() {
+    public void testAddOwner() {
 
         contract.addOwner(rick.getPK(), 500d);
         assertEquals(1, contract.getBalances().size());
@@ -47,25 +47,33 @@ public class TokenContractTest {
     }
 
     @Test
-    public void numOwnersTest() {
+    public void testNumOwners() {
         assertEquals(1, contract.numOwners());
         assertNotEquals(3, contract.numOwners());
     }
 
     @Test
-    public void balanceOfTest() {
+    public void testBalanceOf() {
         assertEquals(500d, contract.balanceOf(rick.getPK()), 0);
     
     }
 
     @Test
-    public void transferTest(){
+    public void testTransfer(){
         contract.transfer(morty.getPK(), 10);
         assertEquals(490d, contract.balanceOf(rick.getPK()), 0); 
         
         contract.transfer(morty.getPK(), tom.getPK(), 1d);
         assertEquals(9d, contract.balanceOf(morty.getPK()), 0);
     }
+
+
+    @Test
+    public void testTotalTokensSold() {
+        contract.transfer(morty.getPK(), 10);
+        assertEquals(10, contract.totalTokensSold(), 0);
+    }
+
 
 
 

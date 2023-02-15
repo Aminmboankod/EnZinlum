@@ -114,6 +114,14 @@ public class TokenContract {
                             .forEach(primaryKey -> System.out.println("Owner: "+primaryKey.hashCode() +", Tokens: "+ getBalances().get(primaryKey) + symbol()));
 	}
 
+	public Double totalTokensSold() {
+        
+		return getBalances().keySet().stream()
+                                    .filter(primaryKey -> !primaryKey.equals(this.ownerPK))
+                                    .mapToDouble(primaryKey -> balanceOf(primaryKey)) // transformo cada valor del map en double primitivo
+                                    .sum();
+	}
+
 
     
 
