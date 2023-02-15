@@ -108,6 +108,12 @@ public class TokenContract {
 
     }
 
+	public void owners() {
+        getBalances().keySet().stream()
+                            .filter(primaryKey -> !primaryKey.equals(this.ownerPK))
+                            .forEach(primaryKey -> System.out.println("Owner: "+primaryKey.hashCode() +", Tokens: "+ getBalances().get(primaryKey) + symbol()));
+	}
+
 
     
 
